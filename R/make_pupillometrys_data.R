@@ -14,7 +14,7 @@
 #' @param condition column name indicating experimental condition
 #'
 #' @examples
-#' Sdata <- make_pupillometrys_data(data = pupil_data,
+#' Sdata <- make_pupillometrys_data(data,
 #' subject = "ID",
 #' trial = "Trial",
 #' time = "Time",

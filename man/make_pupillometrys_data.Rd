@@ -29,7 +29,7 @@ in a long-form csv style format. Thus data input here would be a long
 dataframe, wherein each row is a single frame collected by the eyetracker.
 }
 \examples{
-Sdata <- make_pupillometrys_data(data = pupil_data,
+Sdata <- make_pupillometrys_data(data,
 subject = "ID",
 trial = "Trial",
 time = "Time",
