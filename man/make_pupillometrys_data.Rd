@@ -4,7 +4,7 @@
 \alias{make_pupillometrys_data}
 \title{Prepare data for pre-processing in PupillometrySENDA}
 \usage{
-make_pupillometrys_data(data, subject, trial, time, condition, other)
+make_pupillometrys_data(data, subject, trial, time, condition)
 }
 \arguments{
 \item{data}{a raw, long form dataframe organised by subject, trial, and time.

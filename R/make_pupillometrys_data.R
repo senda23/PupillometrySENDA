@@ -25,7 +25,7 @@
 #' @return A dataframe ready to use in PupillometrySENDA
 
 
-make_pupillometrys_data <- function(data, subject, trial, time, condition, other){
+make_pupillometrys_data <- function(data, subject, trial, time, condition){
 
   class(data) <- c('PupillometrySENDA', class(data))
 
