@@ -14,7 +14,7 @@
 #' @param condition column name indicating experimental condition
 #'
 #' @examples
-#' Sdata <- make_pupillometrys_data(data,
+#' Sdata <- make_pupillometrysenda_data(data,
 #' subject = "ID",
 #' trial = "Trial",
 #' time = "Time",
@@ -25,7 +25,7 @@
 #' @return A dataframe ready to use in PupillometrySENDA
 
 
-make_pupillometrys_data <- function(data, subject, trial, time, condition){
+make_pupillometrysenda_data <- function(data, subject, trial, time, condition){
 
   class(data) <- c('PupillometrySENDA', class(data))
 
