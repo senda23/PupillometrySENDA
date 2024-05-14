@@ -27,8 +27,10 @@
 
 make_pupillometrysenda_data <- function(data, subject, trial, time, condition){
 
+  # PupillometrySENDAであることを示す情報を付加
   class(data) <- c('PupillometrySENDA', class(data))
 
+  # 後の解析に用いる情報を付加
   attr(data, 'PupillometrySENDA') <- list(Subject = subject,
                                       Trial = trial,
                                       Time = time,
