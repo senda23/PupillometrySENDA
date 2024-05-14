@@ -27,24 +27,24 @@
 #' @return A downsampled dataframe of class PupillometrySENDA
 
 downsample_time_data <- function(data, pupil, timebin_size, option = c('mean', 'median')){
-  
+
   # PupillometrySENDA用のデータフレーム以外を引数に指定した場合，エラーを返す
   if('PupillometrySENDA' %in% class(data) == FALSE){
     stop('Dataframe is not of class PupillometrySENDA. Did you forget to run make_pupillometrysenda_data? Some tidyverse functions associated with dplyr and tidyr can also interfere with this functionality.')
   }
-  
+
   # optionが未定義の場合は'mean'とする
   if(is.null(option)) option = 'mean'
-  
+
   options <- attr(data, 'PupillometrySENDA')
   subject <- options$Subject
   trial <- options$Trial
   time <- options$Time
   condition <- options$Condition
-  
+
   # timeをtimebin_sizeで割った値の整数部を，新たな列"Timebin"とする
   data[["Timebin"]] <- floor(data[[time]] / timebin_size)
-  
+
   if(option == 'median'){
     message('Calculating median pupil size in each timebin \n')
     groupy <- c(subject, trial, condition)
@@ -67,11 +67,11 @@ downsample_time_data <- function(data, pupil, timebin_size, option = c('mean', '
       ungroup() %>%
       mutate(!!sym(time) := Timebin * timebin_size)
   }
-  
+
   data2[['Timebin']] <- NULL
-  
+
   class(data2) <- c(class(data))
   attr(data2, 'PupillometrySENDA') <- options
-  
+
   return(data2)
 }
