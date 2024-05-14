@@ -22,6 +22,7 @@
 #' option = "mean")
 #' @import dplyr
 #' @import rlang
+#' @importFrom stats,median
 #'
 #' @export
 #' @return A downsampled dataframe of class PupillometrySENDA

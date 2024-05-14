@@ -22,6 +22,7 @@
 #' extend_back = 0)
 #'
 #' @importFrom tidyr fill
+#' @importFrom stats sd
 #' @import dplyr
 #'
 #' @export
